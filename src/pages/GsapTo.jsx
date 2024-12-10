@@ -1,5 +1,22 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
+
+  useGSAP(()=>{ //similar to useEffect hook also consist of a dependeny array to animation
+    gsap.to('#blue-box', //identifier for selecting an element with an id
+    {
+      x:250, //displace the element animation
+      repeat:-1,// repeat to previous state
+      yoyo:true,//yoyo animation
+      rotation:480 ,
+      duration:2,
+      ease: 'power1'
+
+
+    })
+  },[])
 
   return (
     <main>
